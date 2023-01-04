@@ -9,6 +9,10 @@
     <p v-else-if="inventory  <= 9">Hurry, we are running low.</p>
     <p v-else="inventory== 0">sold out, check back later. </later></p>
     <p v-for="student in students" :key="student.id"> {{student.name}} {{student.age}}</p>
+    <p>What is your name?</p>
+    <input v-model="username">
+    <p>{{username}}</p>
+    <button v-show="username" @click="handleSubmit">submit</button>
   </div>
 </template>
 
@@ -25,8 +29,10 @@ export default {
       inventory: 10,
       students: [
         {id: 1, name: "Seun", age: 29},
-        {id: 2, name: "Faith", age:26}
-      ]
+        {id: 2, name: "Faith", age:26},
+      ],
+      username: "Seun",
+
     };
   },
 
@@ -42,6 +48,10 @@ export default {
     reset() {
       this.count = 0;
     },
+
+    handleSubmit() {
+      console.log("submitted")
+    }
   },
 };
 </script>
