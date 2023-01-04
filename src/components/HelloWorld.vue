@@ -5,6 +5,10 @@
     <button @click="incrementCount">Increment</button>
     <button @click="decrementCount">decrement</button>
     <button @click="reset">reset</button>
+    <p v-if="inventory >= 10 && inventory ">we have {{ inventory }} items in stock.</p>
+    <p v-else-if="inventory  <= 9">Hurry, we are running low.</p>
+    <p v-else="inventory== 0">sold out, check back later. </later></p>
+    <p v-for="student in students" :key="student.id"> {{student.name}} {{student.age}}</p>
   </div>
 </template>
 
@@ -18,7 +22,11 @@ export default {
   data() {
     return {
       count: 0,
-      inventory: 20,
+      inventory: 10,
+      students: [
+        {id: 1, name: "Seun", age: 29},
+        {id: 2, name: "Faith", age:26}
+      ]
     };
   },
 
