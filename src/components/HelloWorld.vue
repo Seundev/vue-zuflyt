@@ -10,7 +10,7 @@
     <p v-else="inventory== 0">sold out, check back later. </later></p>
     <p v-for="student in students" :key="student.id"> {{student.name}} {{student.age}}</p>
     <p>What is your name?</p>
-    <input v-model="username">
+    <input v-focus v-model="username">
     <p>{{username}}</p>
     <button v-show="username" @click="handleSubmit">submit</button>
   </div>
@@ -31,10 +31,19 @@ export default {
         {id: 1, name: "Seun", age: 29},
         {id: 2, name: "Faith", age:26},
       ],
-      username: "Seun",
-
+      username: "",
     };
+
+    
   },
+
+  directives: {
+      focus: {
+        inserted: function (el) {
+          el.focus
+        },
+      },
+    },
 
   methods: {
     incrementCount() {
