@@ -33,8 +33,17 @@ export default {
       ],
       username: "",
     };
-
     
+  },
+
+  filters: {
+    uppercase: function (value) {
+      if (!value) return ""
+      return value.toUpperCase()
+    },
+    truncate: function (value) {
+      return value.slice(0, 10) + "..."
+    }
   },
 
   directives: {
@@ -44,6 +53,8 @@ export default {
         },
       },
     },
+
+    
 
   methods: {
     incrementCount() {
