@@ -13,15 +13,26 @@
     <input v-focus v-model="username">
     <p>{{username}}</p>
     <button v-show="username" @click="handleSubmit">submit</button>
+    <Sample name="This is a sample text"/>
+    <Button title="Pay"/>
+    <Button title="Book"/>
+    <School>
+    <h1>This is alternative to Props</h1>
+    </School>
+
   </div>
 </template>
 
 <script>
+import Sample from "./Sample"
+import Button from "./Button"
+import School from "./School"
 export default {
   name: 'HelloWorld',
   props: {
     msg: String,
   },
+  components: {Sample, Button,School},
 
   data() {
     return {
