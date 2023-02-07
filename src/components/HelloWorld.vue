@@ -18,6 +18,7 @@
     <Button title="Book"/>
     <School>
     <h1>This is alternative to Props</h1>
+    <h2>Nice. I love it. </h2>
     </School>
 
   </div>
